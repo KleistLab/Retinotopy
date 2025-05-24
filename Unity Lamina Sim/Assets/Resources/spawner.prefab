@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2949740029754618619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4798191229950962503}
+  - component: {fileID: 4126212225432403384}
+  - component: {fileID: 6681341730470320188}
+  m_Layer: 0
+  m_Name: spawner
+  m_TagString: spawner
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4798191229950962503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2949740029754618619}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.506975, y: 0.14578833, z: -0.03781645}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4126212225432403384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2949740029754618619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df44f57ed889c1499ba9b5f402f7084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rows: 3
+  amount: 5
+  zigzag: 1
+  spawnplace_34: 0900000004000000
+  spawnplace_16: 1300000014000000
+  decay_time: 3333
+  fmi_time: 0
+  joint_param:
+  - 1
+  - 0
+  - 0
+  strength_shy: 0
+  strength_loyal: 0
+  mode: 0
+  zz_factor: 1.9
+  zz_space: 1.5
+  cc_mode: 0
+  cc: {x: 0, y: 0, z: 0}
+  cc_height: 6
+  cc8: 2.2
+  cc2: 0.15
+  cc5: 0.1
+  mov_str: 1
+--- !u!114 &6681341730470320188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2949740029754618619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9fbf8b9380bcbb4e9d468ac11b5ea26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6024409039100607160, guid: 71e7e4b5f23e71344ab2b6c9135f2444, type: 3}
