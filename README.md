@@ -49,3 +49,8 @@ Each scene holds a spawner object. In the inspector, it is possible to set simul
   - `equator` is a parameter which controls whether to simulate one half or full lamina with the equator. Each scene already sets the corresponding equator value.
 
 ## Analysis - R
+
+Depending on the simulation type, change data folder names in the beginning. Once run through, gives 4 plots:
+-  all 100 simulations plotted with an Euclidian ellipse
+-  only R2/R5 plotted
+-  2 different viusaulizations of standart distance deviation with a trend line
