@@ -3,7 +3,7 @@ Modelling of axonal retinotopy during fly brain development
 
 ## Overview
 
-This Unity project simulates two lamina model scenarios: **half** and **equator**. 
+This Unity project simulates two lamina model scenarios: **half** and **equator**. For this purpose a 2D simulation of arriving axons is created, where the axonal bodies are represented with soft-bodied circle sprite and the involved adhesion proteins with `SpringJoint2D`
 
 ## Features
 
