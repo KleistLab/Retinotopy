@@ -35,6 +35,17 @@ This Unity project simulates two lamina model scenarios: **half** and **equator*
 5. Click the "Play" button in the toolbar to start the simulation.
 
 ### Simulation Parameters
-TODO
+
+Each scene holds a spawner object. In the inspector, it is possible to set simulation parameters.
+
+- **Free to set:** 
+  - `rows` - amount of differential rows 
+  - `amount` - number of bundles per differential row, when running an equator simulation best set to a number divisible by 4 (suggestion - 12)
+  
+- **optimized during development, suggested to leave at deafault values:** 
+  - `spawnplace_34` / `spawnplace_16`- controls spawning location of R3/R4 and spawning location of R1/R6 where the number refers to the location relative to the surface of the spawning heel. 
+  - `decay_time` is the sequence of numbers which signify timepoints of early Fmi degradation depending on the state of the simulation. Initially could be set differently for each type of heel (each number is for R2,R5 and R8), later determined that it needs to be set to the same number (timepoint) for each heel object. 
+  - `fmi_time` is the equivalent of decay_time but signifies the time point of activation for Late Fmi. 
+  - `equator` is a parameter which controls whether to simulate one half or full lamina with the equator. Each scene already sets the corresponding equator value.
 
 ## Analysis - R
