@@ -9,7 +9,7 @@ This Unity project simulates two lamina model scenarios: **half** and **equator*
 
 - Two simulation scenes:
   - **half** – a scenario where one half of lamina is simulated.
-  - **equator** – a scenario where both mirrowed halves are simulated.
+  - **equator** – a scenario where both mirrored halves are simulated.
 - Automated test script that:
   - Runs the simulation 100 times.
   - Tracks and stores the positions of axonal heels from the simulation.
