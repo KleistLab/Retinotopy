@@ -33,7 +33,9 @@ This Unity project simulates two lamina model scenarios: **half** and **equator*
 3. Open either half.unity or equator.unity.
 4. Use the Inspector for the spawner object to configure parameters such as number of rows or bundels per row.
 5. Click the "Play" button in the toolbar to start the simulation.
-![Retinotopy Demo](https://github.com/KleistLab/Retinotopy/raw/main/assets/sim_demo.gif)
+
+![Simulation Demo](https://raw.githubusercontent.com/KleistLab/Retinotopy/main/sim_demo.gif)
+
 ### Simulation Parameters
 
 Each scene holds a spawner object. In the inspector, it is possible to set simulation parameters.
