@@ -13,7 +13,7 @@ This Unity project simulates two lamina model scenarios: **half** and **equator*
 - Automated test script that:
   - Runs the simulation 100 times.
   - Tracks and stores the positions of axonal heels from the simulation.
-  - Outputs data for post-processing and visualization in R.
+  - Outputs data for post-processing and visualization in R. Each test iteration produces output file named `name_test_number.txt`
 
 ## Requirements
 
@@ -33,7 +33,7 @@ This Unity project simulates two lamina model scenarios: **half** and **equator*
 3. Open either half.unity or equator.unity.
 4. Use the Inspector for the spawner object to configure parameters such as number of rows or bundels per row.
 5. Click the "Play" button in the toolbar to start the simulation.
-
+![Retinotopy Demo](https://github.com/KleistLab/Retinotopy/raw/main/assets/sim_demo.gif)
 ### Simulation Parameters
 
 Each scene holds a spawner object. In the inspector, it is possible to set simulation parameters.
