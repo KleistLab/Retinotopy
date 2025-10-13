@@ -44,8 +44,8 @@ Each scene holds a spawner object. In the inspector, it is possible to set simul
 - **Free to set:** 
   - `rows` - amount of differential rows 
   - `amount` - number of bundles per differential row, when running an equator simulation best set to a number divisible by 4 (suggestion - 12)
-  - `fmi` - if set, runs a simulation of Fmi- muitant 
-  - `sdk` - if set, runs a simulation of Sdk- muitant
+  - `fmi` - if set, runs a simulation of Fmi- mutant 
+  - `sdk` - if set, runs a simulation of Sdk- mutant
   --> setting both runs a double-mutant simulation
 
 - **optimized during development, suggested to leave at default values:** 
