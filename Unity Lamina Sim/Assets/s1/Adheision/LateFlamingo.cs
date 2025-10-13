@@ -106,7 +106,8 @@ public class LateFlamingo : MonoBehaviour
             }
         }
 
-        // Create  Joint
+        // Create  Joint 
+        //TODO add for punctual mutants that if fmi_sparse + state of me or partner falso do not do connection
 
         if (!name.Equals(col.gameObject.name) && GetComponents<SpringJoint2D>().Length < maxjoint)//
         {

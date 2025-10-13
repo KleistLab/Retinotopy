@@ -3,12 +3,13 @@ Modelling of axonal retinotopy during fly brain development
 
 ## Overview
 
-This Unity project simulates two lamina model scenarios: **half** and **equator**. For this purpose a 2D simulation of arriving axons is created, where the axonal bodies are represented with soft-bodied circle sprite and the involved adhesion proteins with `SpringJoint2D`
+This Unity project simulates two main lamina model scenarios: **half** and **equator**. For this purpose a 2D simulation of arriving axons is created, where the axonal bodies are represented with soft-bodied circle sprite and the involved adhesion proteins with `SpringJoint2D`
 
 ## Features
 
-- Two simulation scenes:
+- Three simulation scenes:
   - **half** – a scenario where one half of lamina is simulated.
+  - **half no space** – a scenario where one half of lamina is simulated, but minimizing empty space.
   - **equator** – a scenario where both mirrored halves are simulated.
 - Automated test script that:
   - Runs the simulation 100 times.
@@ -43,7 +44,10 @@ Each scene holds a spawner object. In the inspector, it is possible to set simul
 - **Free to set:** 
   - `rows` - amount of differential rows 
   - `amount` - number of bundles per differential row, when running an equator simulation best set to a number divisible by 4 (suggestion - 12)
-  
+  - `fmi` - if set, runs a simulation of Fmi- muitant 
+  - `sdk` - if set, runs a simulation of Sdk- muitant
+  --> setting both runs a double-mutant simulation
+
 - **optimized during development, suggested to leave at default values:** 
   - `spawnplace_34` / `spawnplace_16`- controls spawning location of R3/R4 and spawning location of R1/R6 where the number refers to the location relative to the surface of the spawning heel. 
   - `decay_time` is the sequence of numbers which signify timepoints of early Fmi degradation depending on the state of the simulation. Initially could be set differently for each type of heel (each number is for R2,R5 and R8), later determined that it needs to be set to the same number (timepoint) for each heel object. 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -44,18 +45,29 @@ public class Parameters : MonoBehaviour
     //mutation variables
     [HideInInspector] public int num_sdk;
     [HideInInspector] public string[] sdk_mut;
-    [HideInInspector] public int num_fmi;
+    [HideInInspector] public int num_fmi=3;
     [HideInInspector] public string[] fmi_mut;
+    [HideInInspector] public string[][] rot_mut;
+    [HideInInspector] public string[] fmi_rot_mut;
+    public bool fmi = false;
+    public bool fmi_sparse = false;
+    public bool sdk = false;
+    public bool GLUE = false;
+    
 
+    private int b, r;
 
+    private string[] heels_fmi = {  "R2", "R5"};
+    private string rot;
     // Start is called before the first frame update
     void Start()
     {
-        
-        
-        //SDK
 
-     
+        // rot. mutant (one bundle for now)
+        //SDK
+        //leave himn like this 
+        rot_mut = new string[][] { new[] { "1", "2" } };
+
         //sdk mutant - [1,6,3,4]
         //for (i=0,i < sca,i++) //sca num of max sca 
         //{
@@ -75,6 +87,35 @@ public class Parameters : MonoBehaviour
         // sdk.enabled = false;
         //}
         //}
+        if (fmi_sparse)
+        {
+            fmi_mut = new string[num_fmi];
+            for (int i = 0; i < num_fmi; i++)
+            {
+                b = UnityEngine.Random.Range(0, amount);
+                r = UnityEngine.Random.Range(0, rows);
+                int h = UnityEngine.Random.Range(0, 2);
+                string heel = heels_fmi[h];
+                fmi_mut[i] = r + heel + b;
+               // Debug.Log(fmi_mut[i]);
+            }
+        }
+        if (fmi) {
+            UnityEngine.Random.InitState(42);
+            int bund_num = amount*rows;
+            fmi_rot_mut = new string[bund_num];
+            for (int i = 0; i < bund_num; i++)
+            {
+                
+                rot = UnityEngine.Random.Range(0, 6).ToString();
+
+                fmi_rot_mut[i] = rot;
+                 //Debug.Log(rot);
+            }
+           
+        }
+
+
     }
 
     // Update is called once per frame
@@ -175,5 +216,29 @@ public class Parameters : MonoBehaviour
     public void SetRTL(bool i)
     {
         mode = i;
+    }
+
+    public void SetMutFmi(bool i)
+    {
+        fmi = i;
+        //if (fmi)
+        //{
+        //    UnityEngine.Random.InitState(42);
+        //    int bund_num = amount * rows;
+        //    fmi_rot_mut = new string[bund_num];
+        //    for (int j = 0; j < bund_num; j++)
+        //    {
+
+        //        rot = UnityEngine.Random.Range(0, 6).ToString();
+
+        //        fmi_rot_mut[j] = rot;
+        //        Debug.Log(rot);
+        //    }
+
+        //}
+    }
+    public void SetMutSdk(bool i)
+    {
+        sdk = i;
     }
 }

@@ -176,11 +176,13 @@ public class test
         GameObject cam = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Main Camera"));
         GameObject spawner = MonoBehaviour.Instantiate(Resources.Load<GameObject>("spawner"));
         //GameObject border = MonoBehaviour.Instantiate(Resources.Load<GameObject>("border"));
-        spawner.GetComponent<Parameters>().Setcc(false);
-        //spawner.GetComponent<Parameters>().SetRTL(false);
+
         spawner.GetComponent<Parameters>().SetAm(8);
         spawner.GetComponent<Parameters>().SetRows(4);
         spawner.GetComponent<Parameters>().SetEq(false);
+        spawner.GetComponent<Parameters>().SetMutFmi(true);
+        spawner.GetComponent<Parameters>().SetMutSdk(true);
+        spawner.GetComponent<Parameters>().Setcc(false);
         spawner.GetComponent<Parameters>().SetFmi(1);
         spawner.GetComponent<Parameters>().Set16(new int[] { 20, 20 });
         spawner.GetComponent<Parameters>().Set34(new int[] { 9, 3 });
@@ -190,13 +192,25 @@ public class test
         yield return new WaitForSeconds(120);    //4rows
                                                  //yield return new WaitForSeconds(160); //5
 
-        string path = Application.persistentDataPath + "/fmi_half_turned_test_" + value + ".txt";
+        string path = Application.persistentDataPath + "/mut_double_half_23_9_test_" + value + ".txt";
         //Write some text to the test.txt file
         StreamWriter writer = new StreamWriter(path, false);
 
         GameObject[] objects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects(); ;
         foreach (GameObject o in objects)
-        {
+        {      //all child
+               //if (o.name[1] == 'R')
+               //{
+               //    for (int i = 0; i < 28; i++)
+               //    {
+               //        writer.WriteLine(i+" "+o.name + " " + o.tag + " " + o.transform.GetChild(i).transform.position);
+
+            //    }
+            //    //Debug.Log(o.name);
+
+            //    //+ o.transform.GetChild(28).transform.position
+            //}
+
             if (o.name[1] == 'R')
             {
                 //Debug.Log(o.name);

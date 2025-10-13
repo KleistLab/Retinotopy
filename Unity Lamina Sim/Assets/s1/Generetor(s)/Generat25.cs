@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Generat25 : MonoBehaviour
 {
@@ -13,10 +14,14 @@ public class Generat25 : MonoBehaviour
     //ini pos of r2 and r5
     private Vector3 position2,position5,cc_line ;
     private float height,cc2,cc5;
-
+    private string[][] rot; 
+    private bool fmi;
+    private string[] fmi_rot;
+    private int amount;
     // Start is called before the first frame update
     void Start()
     {
+        
         spawner = GameObject.FindGameObjectWithTag("spawner");
         //initiate positions as positions of this r8
         position2 = this.transform.GetChild(24).transform.position;
@@ -27,10 +32,141 @@ public class Generat25 : MonoBehaviour
         position5.y = position5.y  - 0.6f;
         position5.x = position5.x + 0.2f;
 
+        //if fmi mutant --> rotate around 
+        fmi = spawner.GetComponent<Parameters>().fmi;
+        fmi_rot = spawner.GetComponent<Parameters>().fmi_rot_mut;
+        amount = spawner.GetComponent<Parameters>().amount;
+        if (fmi)
+        {
+            int me = (int)(Char.GetNumericValue(this.name[0]) * amount + Char.GetNumericValue(this.name[3]));
+            //angles
+            if (fmi_rot[me]=="1") {
+
+                position2 = this.transform.GetChild(1).transform.position;
+                position2.y = position2.y + 0.65f; 
+
+
+                position5 = this.transform.GetChild(14).transform.position;
+                position5.y = position5.y - 0.6f;
+
+            }
+            else if (fmi_rot[me] == "2") {
+
+                //60 
+               position2 = this.transform.GetChild(2).transform.position;
+                position2.y = position2.y + 0.65f; 
+                position2.x = position2.x + 0.05f;
+
+                position5 = this.transform.GetChild(21).transform.position;
+                position5.y = position5.y - 0.6f;
+                position5.x = position5.x - 0.2f;
+
+            }
+            else if (fmi_rot[me] == "3") {
+
+                //90
+                position2 = this.transform.GetChild(5).transform.position;
+                position2.y = position2.y + 0.1f; 
+                position2.x = position2.x + 0.05f;
+
+                position5 = this.transform.GetChild(16).transform.position;
+                position5.y = position5.y - 0.1f;
+                position5.x = position5.x - 0.2f;
+
+
+            }
+            else if (fmi_rot[me] == "4") {
+
+                //120
+
+                position2 = this.transform.GetChild(7).transform.position;
+                position2.y = position2.y + 0.1f;  
+                position2.x = position2.x + 0.05f;
+
+                position5 = this.transform.GetChild(21).transform.position;
+                position5.y = position5.y - 0.1f;
+                position5.x = position5.x - 0.2f;
+
+
+            }
+            else if (fmi_rot[me] == "5") {
+                //180
+                position2 = this.transform.GetChild(4).transform.position;
+                position2.y = position2.y - 0.55f;  
+                position2.x = position2.x - 0.2f;
+
+                position5 = this.transform.GetChild(23).transform.position;
+                position5.y = position5.y + 0.6f;  
+                position5.x = position5.x - 0.05f;
+
+
+            }
+
+        }
+
+        rot = spawner.GetComponent<Parameters>().rot_mut;
+        if (rot != null)
+        {
+            if (rot[0][0] == this.name[0].ToString() && rot[0][1] == this.name.Substring(3))
+            {   //60 
+                //position2 = this.transform.GetChild(2).transform.position;
+                //position2.y = position2.y + 0.65f;  //28 for norm straight
+                //position2.x = position2.x + 0.05f;
+
+                //position5 = this.transform.GetChild(21).transform.position;
+                //position5.y = position5.y - 0.6f;
+                //position5.x = position5.x - 0.2f;
+
+                //30 - straight
+                //position2 = this.transform.GetChild(1).transform.position;
+                //position2.y = position2.y + 0.65f;  //28 for norm straight
+
+
+                //position5 = this.transform.GetChild(14).transform.position;
+                //position5.y = position5.y - 0.6f;
+
+                //90
+                //position2 = this.transform.GetChild(5).transform.position;
+                //position2.y = position2.y + 0.1f;  //28 for norm straight
+                //position2.x = position2.x + 0.05f;
+
+                //position5 = this.transform.GetChild(16).transform.position;
+                //position5.y = position5.y - 0.1f;
+                //position5.x = position5.x - 0.2f;
+
+                //120
+
+                //position2 = this.transform.GetChild(7).transform.position;
+                //position2.y = position2.y + 0.1f;  //28 for norm straight
+                //position2.x = position2.x + 0.05f;
+
+                //position5 = this.transform.GetChild(21).transform.position;
+                //position5.y = position5.y - 0.1f;
+                //position5.x = position5.x - 0.2f;
+
+                //180
+                //position2 = this.transform.GetChild(4).transform.position;
+                //position2.y = position2.y - 0.55f;  //28 for norm straight
+                //position2.x = position2.x - 0.2f;
+
+                //position5 = this.transform.GetChild(23).transform.position;
+                //position5.y = position5.y + 0.6f;  //28 for norm straight
+                //position5.x = position5.x - 0.05f;
+            }
+
+
+        }
+        // TODO !!!!!!!!!!!!!!!!!!!!!!
+        //if i am a rotation mutant
+
+
+        // TODO !!!!!!!!!!!!!!!!!!!!!!
+        //if i am a fmi mutant/ sdk mutant spawn wildly somewhere
+
         if (spawner.GetComponent<Parameters>().Equator&& ((spawner.GetComponent<Generat8>().equator[0]) <= (Convert.ToInt32(this.name.Substring(3, this.name.Length - 3)))))
         {
             position2 = this.transform.GetChild(2).transform.position;
-            position2.y = position2.y + 0.65f;  //28 for norm straight
+            position2.y = position2.y + 0.65f;  
             position2.x = position2.x + 0.05f;
 
             position5 = this.transform.GetChild(21).transform.position;

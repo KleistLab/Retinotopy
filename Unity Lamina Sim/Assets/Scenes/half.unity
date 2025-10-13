@@ -136,6 +136,18 @@ PrefabInstance:
       value: spawner
       objectReference: {fileID: 0}
     - target: {fileID: 4126212225432403384, guid: 711b99d120d9c9c49977e624d4a86b4a, type: 3}
+      propertyPath: fmi
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126212225432403384, guid: 711b99d120d9c9c49977e624d4a86b4a, type: 3}
+      propertyPath: sdk
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126212225432403384, guid: 711b99d120d9c9c49977e624d4a86b4a, type: 3}
+      propertyPath: GLUE
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126212225432403384, guid: 711b99d120d9c9c49977e624d4a86b4a, type: 3}
       propertyPath: mode
       value: 1
       objectReference: {fileID: 0}
@@ -166,6 +178,10 @@ PrefabInstance:
     - target: {fileID: 4126212225432403384, guid: 711b99d120d9c9c49977e624d4a86b4a, type: 3}
       propertyPath: decay_time
       value: 111
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126212225432403384, guid: 711b99d120d9c9c49977e624d4a86b4a, type: 3}
+      propertyPath: fmi_sparse
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4126212225432403384, guid: 711b99d120d9c9c49977e624d4a86b4a, type: 3}
       propertyPath: strength_loyal
