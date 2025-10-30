@@ -70,7 +70,7 @@ public class Glue : MonoBehaviour
                         // Connect Joint to colliding Object 
                         joint.connectedBody = connectedBody;
                         joint.enableCollision = true;
-                        joint.breakForce = 777;
+                        joint.breakForce = 777; //"stronger" than fmi
                     joint.autoConfigureDistance = false;
                         joint.autoConfigureConnectedAnchor = false;
                         joint.dampingRatio += dm;

@@ -175,13 +175,15 @@ public class test
         Time.timeScale = 2f;
         GameObject cam = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Main Camera"));
         GameObject spawner = MonoBehaviour.Instantiate(Resources.Load<GameObject>("spawner"));
-        //GameObject border = MonoBehaviour.Instantiate(Resources.Load<GameObject>("border"));
+
+        GameObject border = MonoBehaviour.Instantiate(Resources.Load<GameObject>("vac"));
 
         spawner.GetComponent<Parameters>().SetAm(8);
         spawner.GetComponent<Parameters>().SetRows(4);
         spawner.GetComponent<Parameters>().SetEq(false);
-        spawner.GetComponent<Parameters>().SetMutFmi(true);
-        spawner.GetComponent<Parameters>().SetMutSdk(true);
+        spawner.GetComponent<Parameters>().SetMutFmi(false);
+        spawner.GetComponent<Parameters>().SetMutSdk(false);
+        spawner.GetComponent<Parameters>().SetGlue(true);
         spawner.GetComponent<Parameters>().Setcc(false);
         spawner.GetComponent<Parameters>().SetFmi(1);
         spawner.GetComponent<Parameters>().Set16(new int[] { 20, 20 });
@@ -192,7 +194,7 @@ public class test
         yield return new WaitForSeconds(120);    //4rows
                                                  //yield return new WaitForSeconds(160); //5
 
-        string path = Application.persistentDataPath + "/mut_double_half_23_9_test_" + value + ".txt";
+        string path = Application.persistentDataPath + "/glue_21_10_test_" + value + ".txt";
         //Write some text to the test.txt file
         StreamWriter writer = new StreamWriter(path, false);
 

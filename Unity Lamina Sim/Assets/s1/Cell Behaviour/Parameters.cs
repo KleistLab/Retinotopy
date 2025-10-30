@@ -241,4 +241,9 @@ public class Parameters : MonoBehaviour
     {
         sdk = i;
     }
+
+    public void SetGlue(bool i)
+    {
+        GLUE = i;
+    }
 }

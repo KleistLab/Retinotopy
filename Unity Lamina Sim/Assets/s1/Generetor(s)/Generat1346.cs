@@ -503,11 +503,11 @@ private Vector3 CheckForEmptySpace(Vector3 pos)
         }
 
         GameObject r5 = null;
-        GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag("R5");  //Find all GameObjects with specific tag
+        GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag("R2");  //Find all GameObjects with specific tag
 
         foreach (GameObject go in taggedObjects)  //iterate through all returned objects, and find the one with the correct name
         {
-            if (go.name == this.name.Substring(0, 1) + "R5" + this.name.Substring(3, this.name.Length - 3))
+            if (go.name == this.name.Substring(0, 1) + "R2" + this.name.Substring(3, this.name.Length - 3))
             {
                 r5 = go;
                 break;
